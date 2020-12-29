@@ -1,8 +1,5 @@
 package com.paulprojects.booapp.model;
 
-import com.paulprojects.booapp.enums.County;
-import com.paulprojects.booapp.model.menu.Menu;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,15 +12,6 @@ public class Location {
 
     @Column
     private String name;
-
-    @Enumerated(EnumType.STRING)
-    private County county;
-
-    @OneToOne
-    private Menu menu;
-
-    @OneToMany
-    private List<LocationTable> locationTables;
 
     @OneToMany
     private List<User> employees;
@@ -48,30 +36,6 @@ public class Location {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public County getCounty() {
-        return county;
-    }
-
-    public void setCounty(County county) {
-        this.county = county;
-    }
-
-    public Menu getMenu() {
-        return menu;
-    }
-
-    public void setMenu(Menu menu) {
-        this.menu = menu;
-    }
-
-    public List<LocationTable> getLocationTables() {
-        return locationTables;
-    }
-
-    public void setLocationTables(List<LocationTable> locationTables) {
-        this.locationTables = locationTables;
     }
 
     public List<User> getEmployees() {

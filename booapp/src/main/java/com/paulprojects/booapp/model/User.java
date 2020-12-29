@@ -1,28 +1,22 @@
 package com.paulprojects.booapp.model;
 
-import com.paulprojects.booapp.enums.UserRole;
-import com.paulprojects.booapp.model.menu.MenuItem;
-
-
 import javax.persistence.*;
-import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name="users")
 public class User {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private UserRole userRole;
-
     @Column
     private String username;
+
+    @Column
+    private String firstName;
+
+    @Column
+    private String lastName;
 
     @Column
     private String password;
@@ -36,9 +30,6 @@ public class User {
     @Column
     private byte age;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    private List<MenuItem> userOrder = new ArrayList<>();
-
     public User() {
     }
 
@@ -50,20 +41,28 @@ public class User {
         this.id = id;
     }
 
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
-    }
-
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -97,12 +96,4 @@ public class User {
     public void setAge(byte age) {
         this.age = age;
     }
-
-//    public List<MenuItem> getUserOrder() {
-//        return userOrder;
-//    }
-//
-//    public void setUserOrder(List<MenuItem> userOrder) {
-//        this.userOrder = userOrder;
-//    }
 }

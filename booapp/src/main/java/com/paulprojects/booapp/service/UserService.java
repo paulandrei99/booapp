@@ -34,6 +34,17 @@ public class UserService {
         return userDTOList;
     }
 
+    //aducem userii cu varsta 20
+    public List<UserDTO> getUsersByAge(){
+        List<User> userList = userDAO.findByAge(20);
+        List<UserDTO> userDTOList = new ArrayList<>();
+        for (User user : userList) {
+            UserDTO userDTO = userTransformer.convertModelToDTO(user);
+            userDTOList.add(userDTO);
+        }
+        return userDTOList;
+    }
+
 
 
 }

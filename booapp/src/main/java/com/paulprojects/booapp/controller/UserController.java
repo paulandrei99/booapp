@@ -28,6 +28,10 @@ public class UserController {
         return ResponseEntity.ok(userDTOList);
     }
 
-
+    @GetMapping("user/getUsersByAge")
+    public ResponseEntity getUsersById(@RequestBody UserDTO userDTO) {
+        List<UserDTO> userDTOList = userService.getUsersByAge();
+        return ResponseEntity.ok(userDTOList);
+    }
 
 }
