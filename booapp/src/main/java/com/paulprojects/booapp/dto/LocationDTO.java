@@ -15,6 +15,10 @@ public class LocationDTO {
 
     private UserDTO locationOwner;
 
+    private String county;
+
+    private String city_name;
+
     public LocationDTO() {
     }
 
@@ -49,4 +53,12 @@ public class LocationDTO {
     public void setLocationOwner(UserDTO locationOwner) {
         this.locationOwner = locationOwner;
     }
+
+    public String getCounty(){ return county; }
+
+    public void setCounty(String p_county) {this.county = p_county;}
+
+    public String getCity_name() { return city_name; }
+
+    public void setCity_name(String p_city_name) { city_name = p_city_name; }
 }

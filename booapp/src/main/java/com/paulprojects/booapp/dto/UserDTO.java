@@ -9,7 +9,6 @@ import java.util.List;
 @ManagedBean
 public class UserDTO {
 
-
     private Long id;
 
     private String firstName;
@@ -25,6 +24,8 @@ public class UserDTO {
     private String email;
 
     private byte age;
+
+    private int flag;
 
     public UserDTO() {
     }
@@ -92,4 +93,8 @@ public class UserDTO {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public int getFlag() {  return flag; }
+
+    public void setFlag(int p_flag) {   this.flag = p_flag; }
 }
