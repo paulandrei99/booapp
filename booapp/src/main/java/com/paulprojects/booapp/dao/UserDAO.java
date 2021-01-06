@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface UserDAO extends JpaRepository<User, Long> {
     List<User> findByAge(long age);
-
+    
 }
