@@ -39,6 +39,29 @@ public class LocationService {
         return locationDTOList;
     }
 
+    //output: a list of LocationDTO objects
+    //input : which have the county_name given
+    public List<LocationDTO> getLocationByCounty(String county){
+        List <Location> locationList = locationDAO.findLocationByCounty(county);
+        List <LocationDTO> locationDTOList = new ArrayList<>();
+        for(Location location : locationList){
+            LocationDTO locationDTO = locationTransformer.convertModelToDTO(location);
+            locationDTOList.add(locationDTO);
+        }
+        return locationDTOList;
+    }
+
+    public List<LocationDTO> getLocationByCity(String city){
+        List <Location> locationList = locationDAO.findLocationByCity(city);
+        List <LocationDTO> locationDTOList = new ArrayList<>();
+        for(Location location : locationList){
+            LocationDTO locationDTO = locationTransformer.convertModelToDTO(location);
+            locationDTOList.add(locationDTO);
+        }
+        return locationDTOList;
+    }
+
+
 
 
 }

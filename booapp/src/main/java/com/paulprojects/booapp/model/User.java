@@ -30,6 +30,9 @@ public class User {
     @Column
     private byte age;
 
+    @Column
+    private int flag;//0 - customer , 1 - manager
+
     public User() {
     }
 
@@ -96,4 +99,8 @@ public class User {
     public void setAge(byte age) {
         this.age = age;
     }
+
+    public int getFlag() {  return flag; }
+
+    public void setFlag(int p_flag) {   this.flag = p_flag; }
 }

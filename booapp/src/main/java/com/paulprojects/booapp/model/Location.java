@@ -13,11 +13,18 @@ public class Location {
     @Column
     private String name;
 
+    @Column
+    private String county;
+
+    @Column
+    private String city;
+
     @OneToMany
     private List<User> employees;
 
     @OneToOne
     private User locationOwner;
+
 
     public Location() {
     }
@@ -53,4 +60,12 @@ public class Location {
     public void setLocationOwner(User locationOwner) {
         this.locationOwner = locationOwner;
     }
+
+    public String getCounty(){ return county; }
+
+    public void setCounty(String p_county) {this.county = p_county;}
+
+    public String getCity() { return city; }
+
+    public void setCity(String p_city_name) { city = p_city_name; }
 }

@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Manager extends User {
-
     private List<Location> locationList = new ArrayList<>();
+
+//    public void addLocation(String ){
+//
+//    }
 
 }
