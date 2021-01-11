@@ -28,7 +28,7 @@ public class User {
     private String email;
 
     @Column
-    private byte age;
+    private int age;
 
     @Column
     private int flag;//0 - customer , 1 - manager
@@ -92,11 +92,11 @@ public class User {
         this.email = email;
     }
 
-    public byte getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

@@ -14,8 +14,9 @@ public class ManagerService {
     @Autowired
     private ManagerTransformer managerTransformer;
 
+
     public User getManager(){
-        User manager = userDAO.findUserByUsername("Silviu");
+        User manager = userDAO.findUserByUsername("p_toganel");
         return manager;
     }
 

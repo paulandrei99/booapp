@@ -3,8 +3,6 @@ package com.paulprojects.booapp.dto;
 
 
 import javax.annotation.ManagedBean;
-import java.util.ArrayList;
-import java.util.List;
 
 @ManagedBean
 public class UserDTO {
@@ -23,7 +21,7 @@ public class UserDTO {
 
     private String email;
 
-    private byte age;
+    private int age;
 
     private int flag;
 
@@ -70,11 +68,11 @@ public class UserDTO {
         this.email = email;
     }
 
-    public byte getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

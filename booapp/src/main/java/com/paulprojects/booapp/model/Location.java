@@ -22,6 +22,7 @@ public class Location {
     @OneToMany
     private List<User> employees;
 
+    //in loc sa trimitem user putem usura treaba facand din "user locationOwner" in "int locationOwner"
     @OneToOne
     private User locationOwner;
 

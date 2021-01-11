@@ -8,8 +8,8 @@ import java.util.List;
 
 @Repository
 public interface UserDAO extends JpaRepository<User, Long> {
-    //are si body numa ca nu-l vezi. toate au.
-    List<User> findByAge(long age);
+//    List<User> findUserByAge(long age);
+    List<User> findUserByAge(int age);
     User findUserByUsername(String username);
 
 }

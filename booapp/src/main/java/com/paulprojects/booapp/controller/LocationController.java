@@ -34,13 +34,13 @@ public class LocationController {
 
 
     //returns a json with the list of the locations from the county selected
-    @RequestMapping(value="/locationCounty?{county}", method = RequestMethod.GET)
+    @RequestMapping(value="/locationCounty/{county}", method = RequestMethod.GET)
     public  ResponseEntity getLocationListFrom(@PathVariable("county") String county){
         List <LocationDTO> result_locations = locationService.getLocationByCounty(county);
         return ResponseEntity.ok(result_locations);
     }
 
-    @RequestMapping(value ="/locationCity?{city}", method = RequestMethod.GET)
+    @RequestMapping(value ="/locationCity/{city}", method = RequestMethod.GET)
     public ResponseEntity getLocationByCity(@PathVariable("city") String city){
         List<LocationDTO> locationCity = locationService.getLocationByCity(city);
         return ResponseEntity.ok(locationCity);
