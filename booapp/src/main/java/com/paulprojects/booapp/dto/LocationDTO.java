@@ -1,7 +1,6 @@
 package com.paulprojects.booapp.dto;
 
 import javax.annotation.ManagedBean;
-import javax.persistence.*;
 import java.util.List;
 
 @ManagedBean
@@ -17,7 +16,7 @@ public class LocationDTO {
 
     private String county;
 
-    private String city_name;
+    private String city;
 
     public LocationDTO() {
     }
@@ -58,7 +57,7 @@ public class LocationDTO {
 
     public void setCounty(String p_county) {this.county = p_county;}
 
-    public String getCity_name() { return city_name; }
+    public String getCity() { return city; }
 
-    public void setCity_name(String p_city_name) { city_name = p_city_name; }
+    public void setCity(String p_city_name) { city = p_city_name; }
 }

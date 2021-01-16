@@ -20,8 +20,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private ManagerService managerService;
+
 
     @PostMapping("user/addUser")
     public ResponseEntity addUser(@RequestBody UserDTO userDTO){
@@ -40,19 +39,4 @@ public class UserController {
         List<UserDTO> userDTOList = userService.getUsersByAge();
         return ResponseEntity.ok(userDTOList);
     }
-
-    //Sends response with manager object which has the given username
-    @GetMapping("user/managers")
-    public ResponseEntity getManagers(){
-        User user = managerService.getManager();
-        return ResponseEntity.ok(user);
-    }
-
-
-
-
-
-
-
-
 }
