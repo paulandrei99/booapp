@@ -11,6 +11,9 @@ public class Location {
     private Long id;
 
     @Column
+    private String type;
+
+    @Column
     private String name;
 
     @Column
@@ -19,10 +22,12 @@ public class Location {
     @Column
     private String city;
 
-    @OneToMany
-    private List<User> employees;
+    @Column
+    private int bookingCapacity;
 
-    //in loc sa trimitem user putem usura treaba facand din "user locationOwner" in "int locationOwner"
+    @Column
+    private String about;
+
     @OneToOne
     private User locationOwner;
 
@@ -46,12 +51,20 @@ public class Location {
         this.name = name;
     }
 
-    public List<User> getEmployees() {
-        return employees;
+    public String getCounty(){ return county; }
+
+    public void setCounty(String p_county) {this.county = p_county;}
+
+    public String getCity() { return city; }
+
+    public void setCity(String p_city_name) { city = p_city_name; }
+
+    public int getBookingCapacity() {
+        return bookingCapacity;
     }
 
-    public void setEmployees(List<User> employees) {
-        this.employees = employees;
+    public void setBookingCapacity(int bookingCapacity) {
+        this.bookingCapacity = bookingCapacity;
     }
 
     public User getLocationOwner() {
@@ -62,11 +75,22 @@ public class Location {
         this.locationOwner = locationOwner;
     }
 
-    public String getCounty(){ return county; }
+    public String getAbout() {
+        return about;
+    }
 
-    public void setCounty(String p_county) {this.county = p_county;}
+    public void setAbout(String about) {
+        this.about = about;
+    }
 
-    public String getCity() { return city; }
+    public String getType() {
+        return type;
+    }
 
-    public void setCity(String p_city_name) { city = p_city_name; }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
 }
+

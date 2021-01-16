@@ -31,7 +31,7 @@ public class User {
     private int age;
 
     @Column
-    private int flag;//0 - customer , 1 - manager
+    private int flag;//0 - customer , 1 - manager , 2 - employee
 
     public User() {
     }

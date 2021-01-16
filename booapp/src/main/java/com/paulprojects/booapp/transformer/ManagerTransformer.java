@@ -1,7 +1,6 @@
 package com.paulprojects.booapp.transformer;
 
 import com.paulprojects.booapp.dto.ManagerDTO;
-import com.paulprojects.booapp.dto.UserDTO;
 import com.paulprojects.booapp.model.Manager;
 import com.paulprojects.booapp.model.User;
 import org.springframework.beans.BeanUtils;

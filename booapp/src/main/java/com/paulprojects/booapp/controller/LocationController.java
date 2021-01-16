@@ -32,7 +32,6 @@ public class LocationController {
 //    }
 
 
-
     //returns a json with the list of the locations from the county selected
     @RequestMapping(value="/locationCounty/{county}", method = RequestMethod.GET)
     public  ResponseEntity getLocationListFrom(@PathVariable("county") String county){
@@ -44,6 +43,14 @@ public class LocationController {
     public ResponseEntity getLocationByCity(@PathVariable("city") String city){
         List<LocationDTO> locationCity = locationService.getLocationByCity(city);
         return ResponseEntity.ok(locationCity);
+    }
+
+    //Ar trebui introdus si type-ul din location la get
+    @RequestMapping(value ="/getLocationByCountyAndCity/{county}/{city}", method = RequestMethod.GET)
+    public ResponseEntity getLocationByCountyAndCity(@PathVariable("county") String county,
+                                                     @PathVariable("city") String city){
+        List<LocationDTO> getLocByCountyAndCity = locationService.getLocationByCountyAndCity(county, city);
+        return ResponseEntity.ok(getLocByCountyAndCity);
     }
 
 

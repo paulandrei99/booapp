@@ -10,4 +10,5 @@ import java.util.List;
 public interface LocationDAO extends JpaRepository<Location, Long> {
     List<Location> findLocationByCounty(String county);
     List<Location> findLocationByCity(String city);
+    List<Location> findLocationByCountyAndCity(String County, String city);
 }

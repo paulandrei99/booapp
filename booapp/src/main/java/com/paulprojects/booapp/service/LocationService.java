@@ -61,6 +61,17 @@ public class LocationService {
         return locationDTOList;
     }
 
+    public List<LocationDTO> getLocationByCountyAndCity(String county, String city){
+        List <Location> locationList = locationDAO.findLocationByCountyAndCity(county, city);
+        List <LocationDTO> locationDTOList = new ArrayList<>();
+        for(Location location : locationList){
+            LocationDTO locationDTO = locationTransformer.convertModelToDTO(location);
+            locationDTOList.add(locationDTO);
+        }
+        return locationDTOList;
+    }
+
+
 
 
 

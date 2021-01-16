@@ -8,15 +8,19 @@ public class LocationDTO {
 
     private Long id;
 
-    private String name;
+    private String type;
 
-    private List<UserDTO> employees;
+    private String name;
 
     private UserDTO locationOwner;
 
     private String county;
 
     private String city;
+
+    private int bookingCapacity;
+
+    private String about;
 
     public LocationDTO() {
     }
@@ -37,14 +41,6 @@ public class LocationDTO {
         this.name = name;
     }
 
-    public List<UserDTO> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<UserDTO> employees) {
-        this.employees = employees;
-    }
-
     public UserDTO getLocationOwner() {
         return locationOwner;
     }
@@ -60,4 +56,28 @@ public class LocationDTO {
     public String getCity() { return city; }
 
     public void setCity(String p_city_name) { city = p_city_name; }
+
+    public int getBookingCapacity() {
+        return bookingCapacity;
+    }
+
+    public void setBookingCapacity(int bookingCapacity) {
+        this.bookingCapacity = bookingCapacity;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }
