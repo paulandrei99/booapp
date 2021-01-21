@@ -46,11 +46,4 @@ public class UserController {
         return ResponseEntity.ok(result_user);
     }
 
-    //Sends response with manager object which has the given username
-    @GetMapping("user/managers")
-    public ResponseEntity getManagers(){
-        User user = managerService.getManager();
-        return ResponseEntity.ok(user);
-    }
-
 }
