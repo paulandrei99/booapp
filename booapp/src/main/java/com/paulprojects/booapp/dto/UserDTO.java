@@ -2,7 +2,10 @@ package com.paulprojects.booapp.dto;
 
 
 
+import com.paulprojects.booapp.model.Role;
+
 import javax.annotation.ManagedBean;
+import java.util.Set;
 
 @ManagedBean
 public class UserDTO {
@@ -23,10 +26,26 @@ public class UserDTO {
 
     private int age;
 
-    private int flag;
+    private int active;
+
+    private Set<Role> roles;
+
+//    public UserDTO(Long id, String firstName, String lastName, String username, String password, String phone, String email, int age, int active, Set<Role> roles) {
+//        this.id = id;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.username = username;
+//        this.password = password;
+//        this.phone = phone;
+//        this.email = email;
+//        this.age = age;
+//        this.active = active;
+//        this.roles = roles;
+//    }
 
     public UserDTO() {
     }
+
 
     public Long getId() {
         return id;
@@ -92,7 +111,19 @@ public class UserDTO {
         this.lastName = lastName;
     }
 
-    public int getFlag() {  return flag; }
+    public int getActive() {
+        return active;
+    }
 
-    public void setFlag(int p_flag) {   this.flag = p_flag; }
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }

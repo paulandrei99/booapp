@@ -2,12 +2,14 @@ package com.paulprojects.booapp.service;
 
 import com.paulprojects.booapp.dao.UserDAO;
 import com.paulprojects.booapp.dto.UserDTO;
+import com.paulprojects.booapp.model.Role;
 import com.paulprojects.booapp.model.User;
 import com.paulprojects.booapp.transformer.UserTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -43,6 +45,20 @@ public class UserService {
             userDTOList.add(userDTO);
         }
         return userDTOList;
+    }
+
+    public UserService(UserDAO userDAO){
+        super();
+        this.userDAO = userDAO;
+    }
+
+    public User save(UserDTO userDTO){
+        User user = new User(userDTO.getFirstName(),
+                userDTO.getLastName(), userDTO.getEmail(),
+                userDTO.getAge(), userDTO.getPassword(),
+                userDTO.getPhone(), userDTO.getUsername(),
+                Arrays.asList(new Role("USER")));
+        return userDAO.save(user);
     }
 
 

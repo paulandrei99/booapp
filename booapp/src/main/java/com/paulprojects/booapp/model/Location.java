@@ -27,9 +27,9 @@ public class Location {
 
     @Column
     private String about;
-
-    @OneToOne
-    private User locationOwner;
+// ! ! !
+    @Column
+    private int locationOwner;
 
 
     public Location() {
@@ -65,14 +65,6 @@ public class Location {
 
     public void setBookingCapacity(int bookingCapacity) {
         this.bookingCapacity = bookingCapacity;
-    }
-
-    public User getLocationOwner() {
-        return locationOwner;
-    }
-
-    public void setLocationOwner(User locationOwner) {
-        this.locationOwner = locationOwner;
     }
 
     public String getAbout() {

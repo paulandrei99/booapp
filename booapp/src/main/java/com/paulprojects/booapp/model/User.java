@@ -1,6 +1,9 @@
 package com.paulprojects.booapp.model;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -31,9 +34,26 @@ public class User {
     private int age;
 
     @Column
-    private int flag;//0 - customer , 1 - manager , 2 - employee
+    private int active;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)                   // ! ! !
+    @Column
+    private Set<Role> roles;
 
     public User() {
+    }
+
+    public User(User user){
+        this.id = user.getId();
+        this.username = user.getUsername();
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.password = user.getPassword();
+        this.phone = user.getPhone();
+        this.email = user.getEmail();
+        this.age = user.getAge();
+        this.active = user.getActive();
+        this.roles = user.getRoles();
     }
 
     public Long getId() {
@@ -100,7 +120,19 @@ public class User {
         this.age = age;
     }
 
-    public int getFlag() {  return flag; }
+    public Set<Role> getRoles() {
+        return roles;
+    }
 
-    public void setFlag(int p_flag) {   this.flag = p_flag; }
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
 }

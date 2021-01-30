@@ -27,13 +27,13 @@ public class ManagerController {
 
     //input  : a string with the username of the profile that we want to find
     //output : JSON manager object which has the given username
-    @RequestMapping(value="/managers/{manager_name}", method= RequestMethod.GET)
-    public ResponseEntity getManagers(@PathVariable("manager_name") String manager_name)
-    {
-        Manager manager = managerService.getManagerByUsername(manager_name);
-        ManagerDTO managerDTO = managerTransformer.convertModelToDTO(manager);
-        return ResponseEntity.ok(managerDTO);
-    }
+//    @RequestMapping(value="/managers/{manager_name}", method= RequestMethod.GET)
+//    public ResponseEntity getManagers(@PathVariable("manager_name") String manager_name)
+//    {
+//        Manager manager = managerService.getManagerByUsername(manager_name);
+//        ManagerDTO managerDTO = managerTransformer.convertModelToDTO(manager);
+//        return ResponseEntity.ok(managerDTO);
+//    }
 
     //input  : string : city name where the location is
     //       : string : county name where the location is

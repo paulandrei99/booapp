@@ -20,13 +20,13 @@ public class ManagerService {
     @Autowired
     private ManagerTransformer managerTransformer;
 
-    public Manager getManagerByUsername(String manager_name){
-        Manager manager = new Manager();
-        User user = userDAO.findUserByUsernameAndFlag(manager_name,1);
-        if(user != null)
-            BeanUtils.copyProperties(user,manager);//convertim din user in manager
-        return manager;
-    }
+//    public Manager getManagerByUsername(String manager_name){
+//        Manager manager = new Manager();
+//        User user = userDAO.findUserByUsernameAndFlag(manager_name,1);
+//        if(user != null)
+//            BeanUtils.copyProperties(user,manager);//convertim din user in manager
+//        return manager;
+//    }
 
     public void addLocation(Location location) {
         locationDAO.save(location);
