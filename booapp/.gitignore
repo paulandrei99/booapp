@@ -1,1 +1,3 @@
-#booapp/src/main/resources/application.properties
+booapp/src/main/resources/application.properties
+booapp/booapp.iml
+booapp/target
