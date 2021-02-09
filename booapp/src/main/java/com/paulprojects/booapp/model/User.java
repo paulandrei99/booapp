@@ -1,19 +1,17 @@
 package com.paulprojects.booapp.model;
 
-import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column
-    private String username;
 
     @Column
     private String firstName;
@@ -33,28 +31,29 @@ public class User {
     @Column
     private int age;
 
-    @Column
-    private int active;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id")
+    )                                                                       // ! ! !
+    private Collection<Role> roles;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)                   // ! ! !
-    @Column
-    private Set<Role> roles;
+    public User(String firstName, String lastName, String password, String phone, String email, int age, Collection<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.age = age;
+        this.roles = roles;
+    }
 
     public User() {
     }
 
-    public User(User user){
-        this.id = user.getId();
-        this.username = user.getUsername();
-        this.firstName = user.getFirstName();
-        this.lastName = user.getLastName();
-        this.password = user.getPassword();
-        this.phone = user.getPhone();
-        this.email = user.getEmail();
-        this.age = user.getAge();
-        this.active = user.getActive();
-        this.roles = user.getRoles();
-    }
 
     public Long getId() {
         return id;
@@ -62,14 +61,6 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getFirstName() {
@@ -120,19 +111,11 @@ public class User {
         this.age = age;
     }
 
-    public Set<Role> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Collection<Role> roles) {
         this.roles = roles;
-    }
-
-    public int getActive() {
-        return active;
-    }
-
-    public void setActive(int active) {
-        this.active = active;
     }
 }
