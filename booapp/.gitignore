@@ -1,3 +1,4 @@
 booapp/src/main/resources/application.properties
 booapp/booapp.iml
 booapp/target
+booapp/src/test
