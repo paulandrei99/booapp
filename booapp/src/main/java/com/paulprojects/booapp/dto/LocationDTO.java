@@ -22,6 +22,8 @@ public class LocationDTO {
 
     private String about;
 
+    private String image;
+
     public LocationDTO() {
     }
 
@@ -79,5 +81,13 @@ public class LocationDTO {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

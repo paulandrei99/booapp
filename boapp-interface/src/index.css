@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .navbar{
+  height: 8vh;
+  background-color: gray;
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left:12px;
+  padding-right:25px;
+} */
+
+.searchContainer{
+  padding: auto;
+  justify-content: space-between; 
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+
+/* .searchButton{
+  height: 5vh;
+  border-radius: 10px;
+  background: #91e61c;
+} */
+
+/* .searchLabel{
+  height: 5vh;
+  border-radius: 10px;
+  background: #91e61c;
+} */
+
+.cardImg{
+  height: 25vh;
+  width: 255px;
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+.cardDiv{
+  width: 20vw;
+  border-style: double;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin: 30px;
+  background-color: rgb(209, 229, 231);
+  opacity: 0.9;
+}
+
+.cardComponentsDiv{
+  margin-bottom: 10vh;
+  padding-bottom: 27px;
+}
+
+.mainCompDiv{
+  padding-left:7px;
+  padding-right:7px; 
+}
+
+.dddd{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bgImg{
+  background: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  
+}

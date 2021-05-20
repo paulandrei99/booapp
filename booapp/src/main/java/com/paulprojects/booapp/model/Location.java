@@ -31,6 +31,9 @@ public class Location {
     @Column
     private int locationOwner;
 
+    @Column
+    private String image;
+
 
     public Location() {
     }
@@ -83,6 +86,21 @@ public class Location {
         this.type = type;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getLocationOwner() {
+        return locationOwner;
+    }
+
+    public void setLocationOwner(int locationOwner) {
+        this.locationOwner = locationOwner;
+    }
 
 }
 

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 public class UserController {
 
     @Autowired
@@ -28,6 +30,7 @@ public class UserController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping("/user/getAllUsers")
     public List<User> users(){
         return (List<User>) userDAO.findAll();
@@ -38,7 +41,6 @@ public class UserController {
 //        List<UserDTO> userDTOList = userService.getUsersByAge();
 //        return ResponseEntity.ok(userDTOList);
 //    }
-
 
     @RequestMapping(value="/user/getUserByAge/{age}", method = RequestMethod.GET)
     public ResponseEntity getUsersByAge(@PathVariable("age") int age){

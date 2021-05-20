@@ -1,8 +1,10 @@
 package com.paulprojects.booapp.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.paulprojects.booapp.dao.LocationDAO;
 import com.paulprojects.booapp.dto.LocationDTO;
 import com.paulprojects.booapp.dto.UserDTO;
+import com.paulprojects.booapp.model.Location;
 import com.paulprojects.booapp.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +20,9 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
+    @Autowired
+    private LocationDAO locationDAO;
+
     @PostMapping("location/addLocation")
     public ResponseEntity addLocation(@RequestBody LocationDTO locationDTO){
         locationService.addLocation(locationDTO);
@@ -31,6 +36,11 @@ public class LocationController {
 //        return ResponseEntity.ok(HttpStatus.OK);
 //    }
 
+    @CrossOrigin
+    @GetMapping("/location/getAllLocations")
+    public List<Location> locations(){
+        return (List<Location>) locationDAO.findAll();
+    }
 
     //returns a json with the list of the locations from the county selected
     @RequestMapping(value="/locationCounty/{county}", method = RequestMethod.GET)

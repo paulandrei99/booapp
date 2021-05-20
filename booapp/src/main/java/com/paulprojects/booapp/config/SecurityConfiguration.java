@@ -49,6 +49,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("http://localhost:3000", true)
                 .permitAll()
                 .and()
                 .logout()
@@ -56,8 +58,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login?logout")
-                .permitAll();
+                .permitAll()
+                .and()
+                .cors();
     }
+
+
 
 
 
